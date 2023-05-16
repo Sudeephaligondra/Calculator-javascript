@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="style1.css"/>
+    <title>calculator</title>
+</head>
+<body>
+  
+    <div class="container">
+      <br><h1><center>welcome to calculations</center></h1>
+    <div class="a">
+        <input type="text" id="inputBox" placeholder="0"/>
+    </div>
+    <div>
+      <button class="button d" onclick="ac()">AC</button>
+      <button class="button d" onclick="del()">DEL</button>
+      <button class="button d" onclick="display('%')">%</button>
+      <button class="button d" onclick="display('/')">/</button>
+    </div>
+    <div>
+      <button class="button" onclick="display('7')">7</button>
+      <button class="button" onclick="display('8')">8</button>
+      <button class="button" onclick="display('9')">9</button>
+      <button class="button d" onclick="display('*')">*</button>
+    </div>
+    <div>
+      <button class="button" onclick="display('4')">4</button>
+      <button class="button" onclick="display('5')">5</button>
+      <button class="button" onclick="display('6')">6</button>
+      <button class="button d" onclick="display('-')">-</button>
+    </div>
+    <div>
+      <button class="button" onclick="display('1')">1</button>
+      <button class="button" onclick="display('2')">2</button>
+      <button class="button" onclick="display('3')">3</button>
+      <button class="button d" onclick="display('+')">+</button>
+    </div>
+
+    <div>
+      <button class="button" onclick="display('00')">00</button>
+      <button class="button" onclick="display('0')">0</button>
+      <button class="button" onclick="display('.')">.</button>
+      <button class="button c" onclick="calculate()">=</button>
+    </div>
+</div>  
+</div> 
+</form>
+<script>
+  let outputScreen = document.getElementById("inputBox");
+  function display(num){
+    outputScreen.value+=num;
+  }
+  function calculate(){
+    try{
+      outputScreen.value = eval(outputScreen.value);
+
+    }catch(err)
+    {
+      alert("invalid");
+    }
+  }
+  function ac(){
+    outputScreen.value = " ";
+  }
+  function del(){
+    outputScreen.value=outputScreen.value.slice(0,-1);
+  }
+
+
+</script>
+</body>
+</html>
